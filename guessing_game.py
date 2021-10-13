@@ -10,7 +10,7 @@ def new_game(scores):
     sleep(1)
 
     if len(scores) > 0:
-        print("\nCan you beat the high score of {} guesses?\n".format(min(scores)))
+        print(f"\nCan you beat the high score of {min(scores)} guesses?\n")
     else:
         print("\nThere is no current high score to beat.\n")
 
@@ -27,8 +27,8 @@ def new_game(scores):
             elif guess > num:
                 print("The number is smaller")
             else:
-                print("You got it! The number is {}".format(num))
-                print("It took you {} guesses".format(guesses))
+                print(f"You got it! The number is {num}")
+                print(f"It took you {guesses} guesses")
                 guessing = False
         except ValueError:
             print("Please choose a number between 1 and 100")
@@ -48,9 +48,9 @@ def start_game():
         scores.append(new_game(scores))
         print("\n++++++++++++++")
         print("OVERALL STATS")
-        print("Mean: {}".format(statistics.mean(scores)))
-        print("Median: {}".format(statistics.median(scores)))
-        print("Mode: {}".format(statistics.mode(scores)))
+        print(f"Mean: {statistics.mean(scores)}")
+        print(f"Median: {statistics.median(scores)}")
+        print(f"Mode: {statistics.mode(scores)}")
         print("++++++++++++++\n")
 
         user_choice = ""
